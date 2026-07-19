@@ -13,19 +13,14 @@
 
 ## Architecture
 - High-level architecture diagram.
-- Data flow from source to destination.
 
-End-to-End project for viewing viper shoes in pandas table form. </br>
-<i>The objective of this project is to be be able to view the list of shoes from the Jupyter notebook.</i> <br>
-
-<b>From this:</b> </br>
+<b>Raw Data from Viper Shoe Website:</b> </br>
 ![Screenshot from 2023-07-21 15-36-05](https://github.com/gavincanete/viper-data-pipeline/assets/33832344/226e3ec3-cf6b-431a-a353-729c64125e1a)
 
-<b>To this:</b> </br>
+<b>Cleaned and Validated Data</b> </br>
 ![Screenshot from 2023-07-21 15-35-03](https://github.com/gavincanete/viper-data-pipeline/assets/33832344/cfa07a23-9087-4cb4-bdbc-a291f33391f2)
 
-
-## Data Flow
+- Data flow from source to destination.
 ![viper_data_pipeline](https://github.com/gavincanete/viper-data-pipeline/assets/33832344/369fade7-c978-4607-8763-44ef7cd1571c) </br>
 <i>Explanation</i>: </br>
 Applying Web scraping (BeautifulSoup) to extract the information from the shoes and load it into postgresql via Airflow
