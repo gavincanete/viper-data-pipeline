@@ -1,4 +1,20 @@
 # Viper Data Pipeline
+
+## Project Overview
+- This project is a data engineering pipeline that orchestrates multiple ETL (Extract, Transform, Load) processes to collect shoe product data from a target website. Each ETL workflow extracts raw product information, transforms the data through cleaning and validation, and loads the processed records into a PostgreSQL database for storage and analysis.
+
+- The primary goal of the pipeline is to monitor the stock availability of shoes across multiple categories. By automating the collection and processing of inventory data, the pipeline provides a centralized and reliable dataset that can support inventory monitoring, trend analysis, and business decision-making.
+
+## Business Problem
+- Monitoring shoe inventory across multiple categories can be time-consuming and error-prone when performed manually. Businesses need accurate and up-to-date stock information to understand product availability, identify low-stock items, and make informed inventory decisions.
+
+- This project addresses that challenge by automating the collection of shoe inventory data. The ETL pipeline extracts stock information from the target website, validates and cleans the data, and stores it in a PostgreSQL database. As a result, businesses have access to a centralized and reliable dataset that reflects the number of available shoes in each category.
+
+
+## Architecture
+- High-level architecture diagram.
+- Data flow from source to destination.
+
 End-to-End project for viewing viper shoes in pandas table form. </br>
 <i>The objective of this project is to be be able to view the list of shoes from the Jupyter notebook.</i> <br>
 
@@ -47,6 +63,45 @@ Applying Web scraping (BeautifulSoup) to extract the information from the shoes 
    [Output] </br>
    ![Screenshot from 2023-07-21 15-35-29](https://github.com/gavincanete/viper-data-pipeline/assets/33832344/f055e98e-b79b-42e7-9a6c-3e82c8c30df7)
 
+## Technology Stack
+- Python
+- Airflow
+- BeautifulSoup
+- PostgreSQL
+- Pandas
+
+## Why These Technologies?
+- Why Python?
+- Why Airflow?
+- Why BeautifulSoup?
+- Why PostgreSQL?
+- Why Pandas?
+
+## ETL Pipeline
+1. Extract
+2. Transform
+3. Load
+
+## Data Quality
+- Duplicate handling
+- Missing values
+- Validation
+
+## Error Handling
+- Retry strategy
+- Logging
+- Failed scraping
+
+## Scalability
+- How would you handle millions of records?
+- Parallel scraping
+- Incremental loading
+- Scheduling
+
+## Future Improvements
+- Docker
+- CI/CD
+- Cloud deploy
 
 
    
