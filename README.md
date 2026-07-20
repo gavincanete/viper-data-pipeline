@@ -23,7 +23,8 @@
 - Data flow from source to destination.
 ![viper_data_pipeline](https://github.com/gavincanete/viper-data-pipeline/assets/33832344/369fade7-c978-4607-8763-44ef7cd1571c) </br>
 <i>Explanation</i>: </br>
-Applying Web scraping (BeautifulSoup) to extract the information from the shoes and load it into postgresql via Airflow
+Website → Beautiful Soup (Extraction) → Data Cleaning & Validation → Deduplication → PostgreSQL (Storage) → Pandas (Analysis & Querying)
+Apache Airflow orchestrates and schedules the entire pipeline.
 
 ## Prerequisites
 1) Install the following python packages: </br>
@@ -66,16 +67,44 @@ Applying Web scraping (BeautifulSoup) to extract the information from the shoes 
 - Pandas
 
 ## Why These Technologies?
-- Why Python?
-- Why Airflow?
-- Why BeautifulSoup?
-- Why PostgreSQL?
-- Why Pandas?
+### Python
+I chose Python because it is the industry standard for data engineering workflows. Its rich ecosystem, including Pandas, NumPy, and PySpark, makes data processing,
+transformation, and automation efficient and maintainable.
+
+### Apached Airflow
+- Airflow was chosen to orchestrate ETL workflows because:
+- Workflows can be represented as code
+- Easy scheduling and monitoring
+- Industry-wide adoption
+- Scalable architecture for future pipelines
+
+### Why BeautifulSoup?
+I chose Beautiful Soup because it is one of the most popular and lightweight Python libraries for web scraping. It provides an easy way to parse HTML documents and extract structured data from websites.
+
+### PostgreSQL
+I selected PostgreSQL as the data warehouse because it provides:
+- Strong SQL compliance
+- Excellent analytical query capabilities
+- Reliability for production workloads
+- Easy integration with ETL tools
+
+### Panda
+I chose Pandas because it provides a powerful DataFrame structure for querying, filtering, and analyzing data after it has been loaded into PostgreSQL. Similar to working with SQL tables in tools such as MySQL Workbench, Pandas allows me to efficiently inspect datasets, perform aggregations, and generate insights using Python.
 
 ## ETL Pipeline
-1. Extract
-2. Transform
-3. Load
+1. **Extract**
+- Scrape product data from a website using Beautiful Soup (BS4).
+- Collect raw HTML content and extract relevant fields.
+2. **Transform**
+- Remove duplicate records to ensure data consistency.
+- Validate the data structure and check for missing or invalid values.
+- Clean and standardize the dataset using Pandas.
+3. **Load**
+- Store the processed data in a PostgreSQL database.
+- Organize data into structured tables for efficient querying and analysis.
+4. **Orchestration**
+- Use Apache Airflow to automate and schedule the entire pipeline.
+- Monitor task execution and handle workflow dependencies.
 
 ## Data Quality
 - Duplicate handling
